@@ -61,7 +61,7 @@ namespace DataContainer
         public string CustomerName { get; set; }
         
         public string CarType { get; set; }
-                
+        public string CarModel { get; set; }
         public int Distance { get; set; }
 
         public int Duration { get; set; }

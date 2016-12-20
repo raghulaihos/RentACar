@@ -86,36 +86,54 @@ namespace CarRentalService
         // when customer details sub item clicked 
         private void toolStripMenuItem2_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            dataGridView2.Rows.Clear();       
-                    string s=   e.ClickedItem.Text;
-                    panel1.Visible = false;
-                    panel2.Visible = false;
-                    panel3.Visible = true;
+            //dataGridView2.Rows.Clear();       
+            //        string s=   e.ClickedItem.Text;
+            //        panel1.Visible = false;
+            //        panel2.Visible = false;
+            //        panel3.Visible = true;
 
-            dataGridView2.ColumnCount = 5;
-            dataGridView2.Columns[0].Name = "Car type";
-            dataGridView2.Columns[1].Name = "Distance";
-            dataGridView2.Columns[2].Name = "Duration";
-            dataGridView2.Columns[3].Name = "Gross fare";
-            dataGridView2.Columns[4].Name = "Net fare";
+            //dataGridView2.ColumnCount = 5;
+            //dataGridView2.Columns[0].Name = "Car type";
+            //dataGridView2.Columns[1].Name = "Distance";
+            //dataGridView2.Columns[2].Name = "Duration";
+            //dataGridView2.Columns[3].Name = "Gross fare";
+            //dataGridView2.Columns[4].Name = "Net fare";
 
 
+            //Class1 C = Class1.Instance();
+
+            //List<DataContainer.RentalDetails> L = new List<RentalDetails>();
+            //L = C.GetList();
+
+            //foreach(var Item in L)
+            //{
+            //    if (Item.CustomerName == s)
+            //    {
+            //        string[] row = new string[] { Item.CarType, Convert.ToString(Item.Distance), Convert.ToString(Item.Duration), Convert.ToString(Item.GrossFare), Convert.ToString(Item.NetFare) };
+            //        dataGridView2.Rows.Add(row);
+
+
+            //    }
+
+            //}
+            string s = e.ClickedItem.Text;
+                  panel1.Visible = false;
+                  panel2.Visible = false;
+                  panel3.Visible = true;
             Class1 C = Class1.Instance();
-
-            List<DataContainer.RentalDetails> L = new List<RentalDetails>();
+            List<RentalDetails> L1 = new List<RentalDetails>();
+            List<RentalDetails> L = new List<RentalDetails>();
             L = C.GetList();
 
-            foreach(var Item in L)
+            foreach (var Item in L)
             {
                 if (Item.CustomerName == s)
-                {
-                    string[] row = new string[] { Item.CarType, Convert.ToString(Item.Distance), Convert.ToString(Item.Duration), Convert.ToString(Item.GrossFare), Convert.ToString(Item.NetFare) };
-                    dataGridView2.Rows.Add(row);
+                L1.Add(Item);  
+             }
 
+            var i = new BindingList<RentalDetails>(L1);
+            dataGridView2.DataSource = i;
 
-                }
-
-            }
 
 
 
@@ -261,6 +279,18 @@ namespace CarRentalService
                 label13.Visible = true;
                 label13.Text = "Your car is booked! ";
                 button4.Visible = false;
+                if (type == "Economy")
+                {
+                    N_Economy--;
+                }
+                else if (type == "Executive")
+                {
+                    N_Executive--;
+                }
+                else if (type == "Suv")
+                {
+                    N_Suv--;
+                }
             }
 
 
@@ -380,18 +410,7 @@ namespace CarRentalService
         private void button5_Click(object sender, EventArgs e)
         {
 
-            if(type== "Economy")
-            {
-                N_Economy--;
-            }
-          else if (type == "Executive")
-            {
-                N_Executive--;
-            }
-            else if(type == "Suv")
-            {
-                N_Suv--;
-            }
+            
 
             panel4.Visible = true;
             panel5.Visible = false;
@@ -523,36 +542,55 @@ namespace CarRentalService
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-
+            Class1 C = Class1.Instance();
+            List<Booking> B = new List<Booking>();
             RentalDetails R = new RentalDetails();
-
-            R.CustomerName = CName;
-            R.CarType = CType;
+            B = C.GetBList();
+           R.CustomerName = CName;
             R.Distance = Kms;
             R.Duration = Hrs;
             R.GrossFare = GrossFare;
             R.NetFare = NetFare;
             R.key = Convert.ToInt32(CarType.SelectedItem);
-            Class1 C = Class1.Instance();
 
-            C.SetList(R);
-
-            //deleting corresding key entry in BDetails
-            List<Booking> B = new List<Booking>();
-
-            B = C.GetBList();
-
+       
             foreach (var item in B)
             {
-                if(item.key == Convert.ToInt32(CarType.SelectedItem))
-                {
-                    C.GetBList().Remove(item);
+                if (item.key == Convert.ToInt32(CarType.SelectedItem))
+                {                  
+                    R.CarType = item.CarType;
+                    R.CarModel = item.CarModel;
                     break;
                 }
             }
             
+            C.SetList(R);
 
+            //deleting corresding key entry in BDetails
+          
+        
+            foreach (var item in B)
+            {
+                if(item.key == Convert.ToInt32(CarType.SelectedItem))
+                {
+
+                    C.GetBList().Remove(item);
+                    break;
+                }
+            }
+
+
+            if (R.CarType == "Economy")
+            {
+                N_Economy++;
+            }else if(R.CarType == "Executive")
+            {
+                N_Executive++; ;
+             }
+            else if(R.CarType == "Suv")
+            {
+                N_Suv++;
+            }
 
           
         }
