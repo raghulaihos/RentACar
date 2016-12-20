@@ -512,7 +512,6 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.panel8);
             this.panel7.Controls.Add(this.dataGridView3);
             this.panel7.Location = new System.Drawing.Point(119, 80);
             this.panel7.Name = "panel7";
@@ -550,6 +549,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 694);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);

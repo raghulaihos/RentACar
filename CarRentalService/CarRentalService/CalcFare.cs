@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using DataContainer;
 using System.Threading;
+using System.ComponentModel;
+
 namespace CarRentalService
 {
     public partial class CalcFare : Form
@@ -61,7 +63,7 @@ namespace CarRentalService
 
         }
 
-        // when daily rentals is clicked 
+        // when all rentals is clicked 
         private void dailyRentalsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             panel1.Visible = false;
@@ -71,8 +73,11 @@ namespace CarRentalService
             panel7.Visible = false;
             panel8.Visible = false;
             Class1 C = Class1.Instance();
+            List<RentalDetails> L = new List<RentalDetails>();
+            L = C.GetList();
+            var item = new BindingList<RentalDetails>(L);
 
-            dataGridView1.DataSource = C.GetList();
+            dataGridView1.DataSource = item;
           
         }
 
@@ -272,7 +277,7 @@ namespace CarRentalService
         }
 
         public string type;
-        //after availablity is pressed ! 
+        //after rent a car is pressed ! 
         private void button3_Click(object sender, EventArgs e)
         {
             //panel4.Visible = false;
@@ -343,18 +348,30 @@ namespace CarRentalService
         //when booked cars is pressed 
         private void bookedCarsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+          
+            panel3.Visible = false;
+            panel1.Visible = false;
+            panel2.Visible = false;
+            panel4.Visible = false;
             Class1 C = Class1.Instance();
+            List<Booking> B = new List<Booking>();
+            B = C.GetBList();
+            var list = new BindingList<Booking>(B);
+
             if (C.GetBList().Count > 0)
             {
                 panel1.Visible = false;
-                
+                panel8.Visible = false;
                 panel7.Visible = true;
 
-                dataGridView3.DataSource = C.GetBList();
+                dataGridView3.DataSource = list;
             }
             else
+            {
                 panel7.Visible = false;
                 panel8.Visible = true;
+            }
         }
 
 
