@@ -86,36 +86,7 @@ namespace CarRentalService
         // when customer details sub item clicked 
         private void toolStripMenuItem2_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            //dataGridView2.Rows.Clear();       
-            //        string s=   e.ClickedItem.Text;
-            //        panel1.Visible = false;
-            //        panel2.Visible = false;
-            //        panel3.Visible = true;
-
-            //dataGridView2.ColumnCount = 5;
-            //dataGridView2.Columns[0].Name = "Car type";
-            //dataGridView2.Columns[1].Name = "Distance";
-            //dataGridView2.Columns[2].Name = "Duration";
-            //dataGridView2.Columns[3].Name = "Gross fare";
-            //dataGridView2.Columns[4].Name = "Net fare";
-
-
-            //Class1 C = Class1.Instance();
-
-            //List<DataContainer.RentalDetails> L = new List<RentalDetails>();
-            //L = C.GetList();
-
-            //foreach(var Item in L)
-            //{
-            //    if (Item.CustomerName == s)
-            //    {
-            //        string[] row = new string[] { Item.CarType, Convert.ToString(Item.Distance), Convert.ToString(Item.Duration), Convert.ToString(Item.GrossFare), Convert.ToString(Item.NetFare) };
-            //        dataGridView2.Rows.Add(row);
-
-
-            //    }
-
-            //}
+            
             string s = e.ClickedItem.Text;
                   panel1.Visible = false;
                   panel2.Visible = false;
