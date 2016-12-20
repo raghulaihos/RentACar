@@ -388,7 +388,7 @@ namespace CarRentalService
             button4.Visible = true;
             label13.Visible = false;
             panel8.Visible = false;
-            Populate();
+            
 
         }
 
