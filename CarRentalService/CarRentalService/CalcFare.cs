@@ -26,6 +26,7 @@ namespace CarRentalService
             panel3.Visible = false;
             panel4.Visible = false;
             panel7.Visible = false;
+            panel8.Visible = false;
             Class1 C = Class1.Instance();
             List<Booking> L = new List<Booking>();
             L = C.GetBList();
@@ -68,6 +69,7 @@ namespace CarRentalService
             panel2.Visible = true;
             panel4.Visible = false;
             panel7.Visible = false;
+            panel8.Visible = false;
             Class1 C = Class1.Instance();
 
             dataGridView1.DataSource = C.GetList();
@@ -178,7 +180,7 @@ namespace CarRentalService
             panel5.Visible = false;
             panel6.Visible = false;
             panel7.Visible = false;
-
+            panel8.Visible = false;
 
         }
 
@@ -278,7 +280,8 @@ namespace CarRentalService
             button4.Visible = true;
             label13.Visible = false;
             panel6.Visible = false;
-           type = Convert.ToString(comboBox1.SelectedItem);
+            panel8.Visible = false;
+            type = Convert.ToString(comboBox1.SelectedItem);
 
             if(type == "Economy")
             {
@@ -351,7 +354,7 @@ namespace CarRentalService
             }
             else
                 panel7.Visible = false;
-
+                panel8.Visible = true;
         }
 
 
@@ -377,7 +380,7 @@ namespace CarRentalService
             panel5.Visible = false;
             button4.Visible = true;
             label13.Visible = false;
-
+            panel8.Visible = false;
             Populate();
 
         }
@@ -399,7 +402,7 @@ namespace CarRentalService
             panel3.Visible = false;
             panel4.Visible = false;
             panel7.Visible = false;
-           
+            panel8.Visible = false;
             comboBox1.Items.Add("Economy");
             comboBox1.Items.Add("Executive");
             comboBox1.Items.Add("Suv");

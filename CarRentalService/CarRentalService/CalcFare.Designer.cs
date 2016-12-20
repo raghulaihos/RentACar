@@ -41,6 +41,7 @@
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.rentACarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookedCarsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.dailyRentalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,9 +73,10 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.bookedCarsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel7 = new System.Windows.Forms.Panel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -88,6 +90,7 @@
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // CarType
@@ -205,6 +208,13 @@
             this.rentACarToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
             this.rentACarToolStripMenuItem.Text = "Rent a car";
             this.rentACarToolStripMenuItem.Click += new System.EventHandler(this.rentACarToolStripMenuItem_Click);
+            // 
+            // bookedCarsToolStripMenuItem
+            // 
+            this.bookedCarsToolStripMenuItem.Name = "bookedCarsToolStripMenuItem";
+            this.bookedCarsToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
+            this.bookedCarsToolStripMenuItem.Text = "Booked Cars";
+            this.bookedCarsToolStripMenuItem.Click += new System.EventHandler(this.bookedCarsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -500,15 +510,9 @@
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // bookedCarsToolStripMenuItem
-            // 
-            this.bookedCarsToolStripMenuItem.Name = "bookedCarsToolStripMenuItem";
-            this.bookedCarsToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
-            this.bookedCarsToolStripMenuItem.Text = "Booked Cars";
-            this.bookedCarsToolStripMenuItem.Click += new System.EventHandler(this.bookedCarsToolStripMenuItem_Click);
-            // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.panel8);
             this.panel7.Controls.Add(this.dataGridView3);
             this.panel7.Location = new System.Drawing.Point(119, 80);
             this.panel7.Name = "panel7";
@@ -524,17 +528,34 @@
             this.dataGridView3.Size = new System.Drawing.Size(765, 416);
             this.dataGridView3.TabIndex = 0;
             // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.label15);
+            this.panel8.Location = new System.Drawing.Point(179, 89);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(578, 305);
+            this.panel8.TabIndex = 1;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(186, 53);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(164, 17);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "No cars currently rented!";
+            // 
             // CalcFare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 694);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panel1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "CalcFare";
             this.Text = "Form1";
@@ -557,6 +578,8 @@
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -611,6 +634,8 @@
         private System.Windows.Forms.ToolStripMenuItem bookedCarsToolStripMenuItem;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label15;
     }
 }
 
