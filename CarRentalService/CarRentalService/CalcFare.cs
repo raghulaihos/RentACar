@@ -91,6 +91,7 @@ namespace CarRentalService
                   panel1.Visible = false;
                   panel2.Visible = false;
                   panel3.Visible = true;
+                  panel4.Visible = false;
             Class1 C = Class1.Instance();
             List<RentalDetails> L1 = new List<RentalDetails>();
             List<RentalDetails> L = new List<RentalDetails>();
@@ -180,6 +181,7 @@ namespace CarRentalService
 
         void Populate()
         {
+           
             if (Convert.ToString(comboBox1.SelectedItem) == "Economy")
             {
                 comboBox2.Items.Add("Ford");
@@ -278,11 +280,13 @@ namespace CarRentalService
         }
 
         public string type;
-        //after rent a car is pressed ! 
+        //after availability car is pressed ! 
         private void button3_Click(object sender, EventArgs e)
         {
             //panel4.Visible = false;
-           panel5.Visible = false;
+            comboBox2.Items.Clear();
+            comboBox3.Items.Clear();
+            panel5.Visible = false;
             button4.Visible = true;
             label13.Visible = false;
             panel6.Visible = false;
@@ -331,6 +335,7 @@ namespace CarRentalService
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
+            CarType.Items.Clear();
             Class1 C = Class1.Instance();
             List<Booking> L = new List<Booking>();
             L = C.GetBList();
