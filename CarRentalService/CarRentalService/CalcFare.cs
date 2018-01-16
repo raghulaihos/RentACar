@@ -24,7 +24,7 @@ namespace CarRentalService
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             panel1.Visible = false;
-            panel2.Visible = false;
+            panel2.Visible = true;
             panel3.Visible = false;
             panel4.Visible = false;
             panel7.Visible = false;
