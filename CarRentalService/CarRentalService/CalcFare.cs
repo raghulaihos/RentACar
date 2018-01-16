@@ -23,7 +23,7 @@ namespace CarRentalService
         //when calculate fare is clicked 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
+            panel1.Visible = false;
             panel2.Visible = false;
             panel3.Visible = false;
             panel4.Visible = false;
