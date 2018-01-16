@@ -26,7 +26,7 @@ namespace CarRentalService
             panel1.Visible = false;
             panel2.Visible = true;
             panel3.Visible = false;
-            panel4.Visible = false;
+            panel4.Visible = true;
             panel7.Visible = false;
             panel8.Visible = false;
             Class1 C = Class1.Instance();
